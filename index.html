@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Portoflio - Niewin</title>
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <script src="https://kit.fontawesome.com/57a9e3afe5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,20 +27,77 @@
             </ul>
 
             <button class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <div class="burger_line"></div>
+                <div class="burger_line"></div>
+                <div class="burger_line"></div>
             </button>
         </nav>
 
         <div class="header_box">
-            <img src="src/img/boy-38262_640.png" alt="" class="header_avatar">
-            <h1 class="header_title">Nie<span class="header_title-win">win</span></h1>
-            <p class="header_text">I'm Front-End Developer</p>
+            <img src="dist/img/boy-38262_640.png" alt="" class="header_avatar">
+            <div class="header__box-information">
+                <h1 class="header_title">Nie<span class="header_title-win">win</span></h1>
+                <p class="header_text">I'm a Front-End Developer</p>
+                <div class="header_download">
+                    <a href="dist/img/CV-test.pdf" download class="header_download-link">Download CV</a>
+                </div>
+            </div>
         </div>
+        <a href="#about" class="header_icon"><i class="fa-solid fa-angles-down"></i></a>
     </header>
+    <main class="main">
+        <section class="about section-padding section" id="about">
+            <div class="wrapper">
+                <div class="about_box">
+                    <h2 class="about_box-title section_title"><span class="underline">About me</span></h2>
+                    <p class="about_box-text first">Hello! My name is Piotrek.</p>
+                    <p class="about_box-text second">I am a student at the Warsaw University of Technology. I have been
+                        trying to create websites for a long time and it gives me great pleasure</p>
+
+                    <p class="about_box-text third">Below you can discover my other interests!</p>
+                </div>
+                <div class="about_cards">
+                    <div class="about_card one">
+                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="about_card-information">
+                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
+                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae
+                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
+                                maxime.</p>
+                        </div>
+                    </div>
+
+                    <div class="about_card two">
+                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="about_card-information">
+                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
+                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae
+                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
+                                maxime.</p>
+                        </div>
+                    </div>
+
+                    <div class="about_card three">
+                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="about_card-information">
+                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
+                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae
+                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
+                                maxime.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+    </main>
 
 
+    <script src="dist/js/main.min.js"></script>
 </body>
 
 </html>
