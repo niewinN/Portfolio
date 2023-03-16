@@ -19,11 +19,11 @@
         <nav class="nav">
 
             <ul class="nav_list">
-                <li><a href="" class="nav_link">Home</a></li>
-                <li> <a href="" class="nav_link">About</a></li>
+                <li><a href="#" class="nav_link">Home</a></li>
+                <li> <a href="#about" class="nav_link">About</a></li>
                 <li> <a href="" class="nav_link">Skills</a></li>
                 <li><a href="" class="nav_link">Experience</a></li>
-                <li><a href="" class="nav_link">Contact</a></li>
+                <li><a href="#contact" class="nav_link">Contact</a></li>
             </ul>
 
             <button class="burger">
@@ -35,7 +35,7 @@
 
         <div class="header_box">
             <img src="dist/img/boy-38262_640.png" alt="" class="header_avatar">
-            <div class="header__box-information">
+            <div class="header_box-information">
                 <h1 class="header_title">Nie<span class="header_title-win">win</span></h1>
                 <p class="header_text">I'm a Front-End Developer</p>
                 <div class="header_download">
@@ -52,7 +52,7 @@
                     <h2 class="about_box-title section_title"><span class="underline">About me</span></h2>
                     <p class="about_box-text first">Hello! My name is Piotrek.</p>
                     <p class="about_box-text second">I am a student at the Warsaw University of Technology. I have been
-                        trying to create websites for a long time and it gives me great pleasure</p>
+                        trying to create websites for a long time and it gives me great pleasure.</p>
 
                     <p class="about_box-text third">Below you can discover my other interests!</p>
                 </div>
@@ -94,6 +94,77 @@
             </div>
             </div>
         </section>
+        <section class="skills section-padding section">
+            <div class="wrapper">
+                <div class="skills_icon">
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="dist/img/html.png" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+
+                    <div class="skills_box" style="--i:1;">
+                        <img src="" alt="" class="skills_box-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact section-padding section" id="contact">
+            <div class="wrapper">
+                <h2 class="contact_title">Skontaktuj się ze mną!</h2>
+                <form class="contact_form">
+
+                    <div class="contact_form-box">
+                        <label class="contact_form-label" for="username">Name</label>
+                        <input class="contact_form-input" type="text" id="username">
+                        <p class="form_box-error"></p>
+                    </div>
+
+                    <div class="contact_form-box">
+                        <label class="contact_form-label" for="email">E-mail</label>
+                        <input class="contact_form-input" type="email" id="email">
+                        <p class="form_box-error"></p>
+                    </div>
+
+                    <div class="contact_form-box">
+                        <label class="contact_form-label" for="msg">Message</label>
+                        <textarea class="contact_form-textarea" name="msg" id="msg"></textarea>
+                        <p class="form_box-error"></p>
+                    </div>
+
+                    <div class="contact_form-box">
+                        <button class="contact_form-btn">Send</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
     </main>
 
 
