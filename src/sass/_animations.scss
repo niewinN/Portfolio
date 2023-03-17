@@ -39,3 +39,26 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes rotateEnvelope {
+    25% {
+        top: 94%;
+        left: 7%;
+        transform: rotate(-225deg);
+    }
+
+    50% {
+        top: 60%;
+        left: 76%;
+        transform: rotate(225deg);
+    }
+
+    75% {
+        top: 5%;
+        left: 90%;
+        transform: rotate(-225deg);
+    }
+    100% {
+        transform: rotate(225deg);
+    }
+}

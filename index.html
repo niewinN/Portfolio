@@ -9,7 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Portoflio - Niewin</title>
+
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <script src="dist/js/main.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('_7X0SZzXp4uKtXE8_');
+        })();
+    </script>
     <script src="https://kit.fontawesome.com/57a9e3afe5.js" crossorigin="anonymous"></script>
 </head>
 
@@ -136,38 +145,74 @@
 
         <section class="contact section-padding section" id="contact">
             <div class="wrapper">
-                <h2 class="contact_title">Skontaktuj się ze mną!</h2>
+                <h2 class="contact_title"><span class="underline">Skontaktuj się ze mną!</span></h2>
+                <!-- <div class="contact_box"> -->
                 <form class="contact_form">
 
                     <div class="contact_form-box">
                         <label class="contact_form-label" for="username">Name</label>
-                        <input class="contact_form-input" type="text" id="username">
-                        <p class="form_box-error"></p>
+                        <input class="contact_form-input" type="text" id="username" placeholder="Write your name"
+                            name="username" required>
+                        <p class="contact_form-box--error">error</p>
                     </div>
 
                     <div class="contact_form-box">
                         <label class="contact_form-label" for="email">E-mail</label>
-                        <input class="contact_form-input" type="email" id="email">
-                        <p class="form_box-error"></p>
+                        <input class="contact_form-input" type="email" id="email" placeholder="Write your e-mail"
+                            name="email" required>
+                        <p class="contact_form-box--error">error</p>
                     </div>
 
                     <div class="contact_form-box">
                         <label class="contact_form-label" for="msg">Message</label>
-                        <textarea class="contact_form-textarea" name="msg" id="msg"></textarea>
-                        <p class="form_box-error"></p>
+                        <textarea class="contact_form-textarea" name="msg" id="msg" placeholder="Write your message"
+                            name="msg" required></textarea>
+                        <p class="contact_form-box--error">error</p>
                     </div>
 
                     <div class="contact_form-box">
-                        <button class="contact_form-btn">Send</button>
+                        <button class="contact_form-btn" type="submit" onclick="sendMail()">Send</button>
                     </div>
 
+                    <div class="contact_form-popup">
+                        <p class="contact_form-popup--text">Sent successfully</p>
+                        <button class="contact_form-popup--close">Close</button>
+                    </div>
+                    <!-- <button class="contact_form-btn"> 
+                                        -->
+                    <!-- <div class="contact_form-box"> -->
+                    <!-- <input class="contact_form-btn" value="Submit" type="submit"> -->
+                    <!-- </div> -->
+                    <!-- <div class="contact_form-btn">
+                        <input value="Submit" type="submit">
+                    </div> -->
+                    <!-- <div class="contact_form-box">
+                        <button class="contact_form-btn" type="submit"><input value="Send" type="submit"></button>
+                    </div> -->
+
+                    <!-- <button class="contact_form-btn" type="submit"><input value="Send" type="submit"></button> -->
+
                 </form>
+                <!-- </div> -->
+                <div class="contact_links">
+                    <a href="https://github.com/niewinN" target="_blank" class="contact_links-github"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/piotr-niewi%C5%84ski-702a3b268/"
+                        class="contact_links-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
             </div>
+            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-one">
+            <!-- <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-two">
+            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-three">
+            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-fourth"> -->
         </section>
 
     </main>
 
 
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
+    <!-- // </script> -->
     <script src="dist/js/main.min.js"></script>
 </body>
 
