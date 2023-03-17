@@ -308,12 +308,12 @@ html {
 	}
 
 	.two {
-		background-image: url("/dist/img/stadium-189777_640.jpg");
+		background-image: url("../../dist/img/stadium-189777_640.jpg");
 		animation: cardWave 1s linear 0.6s forwards;
 	}
 
 	.three {
-		background-image: url("/dist/img/ps4-2326616_640.jpg");
+		background-image: url("../../dist/img/ps4-2326616_640.jpg");
 		animation: cardWave 1s linear 0.9s forwards;
 	}
 
@@ -524,6 +524,67 @@ html {
 
 	&_icon {
 		display: none;
+	}
+}
+
+
+.experience {
+	background-color: rgb(122, 127, 133);
+
+	&_title {
+		text-align: center;
+		margin-bottom: 2em;
+		font-size: 2.5rem;
+		color: #fff;
+	}
+
+	&_box {
+		display: flex;
+		flex-direction: column;
+
+		&-error {
+			visibility: hidden;
+		}
+
+		&.errorExp &-input {
+			border: 2px solid red;
+		}
+
+		&.errorExp &-error {
+			visibility: visible;
+		}
+
+		&.errorExp &-text {
+			visibility: hidden;
+		}
+
+		&-label {
+			font-size: 1.8rem;
+			margin-bottom: 0.5em;
+			text-align: center;
+		}
+
+		&-input {
+			border-radius: 12px;
+			border: 2px solid #702a9f;
+			padding: 0.5em 1em;
+			font-size: 1.5rem;
+			margin-bottom: 0.5em;
+		}
+
+		&-btn {
+			border-radius: 12px;
+			padding: 0.5em 1em;
+			background-color: rgb(222, 147, 159);
+			color: #fff;
+			font-size: 1.8rem;
+			border: none;
+			margin-bottom: 1em;
+		}
+
+		&-text {
+			font-size: 2rem;
+		}
 	}
 }
 

@@ -5,9 +5,12 @@ const username = document.querySelector("#username")
 const email = document.querySelector("#email")
 const msg = document.querySelector("#msg")
 const form = document.querySelector(".contact_form")
-const popup = document.querySelector('.contact_form-popup')
-const closePopup = document.querySelector('.contact_form-popup--close')
-
+const popup = document.querySelector(".contact_form-popup")
+const closePopup = document.querySelector(".contact_form-popup--close")
+const experienceInput = document.querySelector(".experience_box-input")
+const experienceBtn = document.querySelector(".experience_box-btn")
+const experienceText = document.querySelector(".experience_box-text")
+const experienceError = document.querySelector(".experience_box-error")
 
 function sendMail() {
 	const params = {
@@ -22,9 +25,9 @@ function sendMail() {
 	emailjs
 		.send(serviceID, templateID, params)
 		.then(res => {
-			document.getElementById("username").value = "";
-			document.getElementById("email").value = "";
-			document.getElementById("msg").value = "";
+			document.getElementById("username").value = ""
+			document.getElementById("email").value = ""
+			document.getElementById("msg").value = ""
 			console.log(res)
 		})
 		.catch(err => console.log(err))
@@ -79,21 +82,69 @@ const checkEmail = params => {
 }
 
 const checkErrors = () => {
-    const allInputs = document.querySelectorAll('.contact_form-box')
-    let errorCount = 0;
+	const allInputs = document.querySelectorAll(".contact_form-box")
+	let errorCount = 0
 
-    allInputs.forEach(el => {
-        if(el.classList.contains('error')) {
-            errorCount++;
-        }
-    })
+	allInputs.forEach(el => {
+		if (el.classList.contains("error")) {
+			errorCount++
+		}
+	})
 
-    if(errorCount === 0) {
-        popup.classList.add('show')
-    }
+	if (errorCount === 0) {
+		popup.classList.add("show")
+	}
 
-    console.log(errorCount);
+	console.log(errorCount)
 }
+
+const showExpError = (input2, text) => {
+	const expBox = experienceInput.parentElement
+	const errorText = expBox.querySelector(".experience_box-error")
+
+	expBox.classList.add("errorExp")
+	errorText.textContent = text
+}
+
+const clearExpError = () => {
+	const expBox = experienceInput.parentElement
+	expBox.classList.remove("errorExp")
+}
+
+const checkExp = () => {
+	if(experienceInput === '') {
+		showExpError(experienceInput, experienceInput.placeholder)
+	} else {
+		clearExpError()
+	}
+}
+
+const checkExpLength = (min) => {
+	if (experienceInput.value.length < min) {
+		showExpError(
+			experienceInput,
+			`${experienceInput.previousElementSibling.innerText} must contain at least ${min} characters`
+		) } else {
+			showExperience()
+		}
+	}
+
+const showExperience = () => {
+	const ExpInputValue = experienceInput.value
+	const date = new Date()
+	const day = date.getDate()
+	const month = date.getMonth() + 1
+	const year = date.getFullYear()
+
+	experienceText.textContent = `Frontend developer in ${ExpInputValue} since ${day}.${month}.${year} :)`
+}
+
+experienceBtn.addEventListener("click", e => {
+	e.preventDefault()
+
+	checkExp()
+	checkExpLength(2)
+})
 
 sendBtn.addEventListener("click", e => {
 	e.preventDefault()
@@ -102,10 +153,9 @@ sendBtn.addEventListener("click", e => {
 	checkLength(username, 3)
 	checkLength(msg, 5)
 	checkEmail(email)
-    checkErrors()
+	checkErrors()
 })
 
-closePopup.addEventListener('click', () => {
-    popup.classList.remove('show')
+closePopup.addEventListener("click", () => {
+	popup.classList.remove("show")
 })
-
