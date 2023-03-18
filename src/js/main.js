@@ -11,6 +11,7 @@ const experienceInput = document.querySelector(".experience_box-input")
 const experienceBtn = document.querySelector(".experience_box-btn")
 const experienceText = document.querySelector(".experience_box-text")
 const experienceError = document.querySelector(".experience_box-error")
+const experienceLink = document.querySelector(".experience_box-link")
 
 function sendMail() {
 	const params = {
@@ -116,6 +117,7 @@ const checkExp = () => {
 		showExpError(experienceInput, experienceInput.placeholder)
 	} else {
 		clearExpError()
+		experienceLink.style.visibility = 'hidden';
 	}
 }
 
@@ -126,6 +128,7 @@ const checkExpLength = (min) => {
 			`${experienceInput.previousElementSibling.innerText} must contain at least ${min} characters`
 		) } else {
 			showExperience()
+			confettiAnimation()
 		}
 	}
 
@@ -137,6 +140,15 @@ const showExperience = () => {
 	const year = date.getFullYear()
 
 	experienceText.textContent = `Frontend developer in ${ExpInputValue} since ${day}.${month}.${year} :)`
+	experienceLink.style.visibility = 'visible';
+}
+
+const confettiAnimation = () => {
+	confetti({
+		particleCount: 100,
+		spread: 70,
+		origin: {y: 0.6}
+	})
 }
 
 experienceBtn.addEventListener("click", e => {

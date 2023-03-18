@@ -546,6 +546,10 @@ html {
 			visibility: hidden;
 		}
 
+		&-link {
+			visibility: hidden;
+		}
+
 		&.errorExp &-input {
 			border: 2px solid red;
 		}
