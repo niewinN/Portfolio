@@ -30,8 +30,8 @@
             <ul class="nav_list">
                 <li><a href="#" class="nav_link">Home</a></li>
                 <li> <a href="#about" class="nav_link">About</a></li>
-                <li> <a href="" class="nav_link">Skills</a></li>
-                <li><a href="" class="nav_link">Experience</a></li>
+                <li> <a href="#skills" class="nav_link">Skills</a></li>
+                <li><a href="#experience" class="nav_link">Experience</a></li>
                 <li><a href="#contact" class="nav_link">Contact</a></li>
             </ul>
 
@@ -59,108 +59,129 @@
             <div class="wrapper">
                 <div class="about_box">
                     <h2 class="about_box-title section_title"><span class="underline">About me</span></h2>
-                    <p class="about_box-text first">Hello! My name is Piotrek.</p>
-                    <p class="about_box-text second">I am a student at the Warsaw University of Technology. I have been
-                        trying to create websites for a long time and it gives me great pleasure.</p>
-
-                    <p class="about_box-text third">Below you can discover my other interests!</p>
-                </div>
-                <div class="about_cards">
-                    <div class="about_card one">
-                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
-                        <div class="about_card-information">
-                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
-                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Repudiandae
-                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
-                                maxime.</p>
-                        </div>
-                    </div>
-
-                    <div class="about_card two">
-                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
-                        <div class="about_card-information">
-                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
-                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Repudiandae
-                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
-                                maxime.</p>
-                        </div>
-                    </div>
-
-                    <div class="about_card three">
-                        <button class="about_card-icon"><i class="fa-regular fa-circle-question"></i></button>
-                        <div class="about_card-information">
-                            <h2 class="about_card-interest">Lorem ipsum dolor</h2>
-                            <p class="about_card-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Repudiandae
-                                excepturi asperiores libero inventore dolore architecto aliquam unde aliquid nulla
-                                maxime.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            </div>
-        </section>
-        <section class="skills section-padding section">
-            <div class="wrapper">
-                <div class="skills_icon">
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="dist/img/html.png" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
-
-                    <div class="skills_box" style="--i:1;">
-                        <img src="" alt="" class="skills_box-img">
-                    </div>
+                    <p class="about_box-text">Hello! My name is Piotrek.<br> I am a student at the Warsaw University of
+                        Technology. I have been
+                        trying to create websites for a long time and it gives me great pleasure. I tried different
+                        programming languages in the past and finally realized that creating websites and applications
+                        is
+                        what I want to do in my life. I try to expand my knowledge every day and gain the greatest
+                        competence to get my dream job.</p>
                 </div>
             </div>
+            <!-- </div> -->
         </section>
 
-        <section class="experience section-padding section">
-            <div class="wrapper">
+        <section class="experience section-padding section" id="experience">
+            <div class="wrapper experience_background">
                 <h2 class="experience_title"><span class="underline">My experience</span></h2>
-                <div class="experience_box">
-                    <label for="" class="experience_box-label">Your company name</label>
-                    <input type="text" class="experience_box-input" placeholder="Please enter your company name">
-                    <p class="experience_box-error">error</p>
-                    <button class="experience_box-btn">Confirm</button>
-                    <p class="experience_box-text"></p>
-                    <a href="work.html" class="experience_box-link">For more details click here</a>
+                <div class="experience_position">
+                    <div class="experience_box">
+                        <label for="" class="experience_box-label">Your company name</label>
+                        <input type="text" class="experience_box-input" placeholder="Please enter your company name">
+                        <p class="experience_box-error">error</p>
+                        <button class="experience_box-btn">Confirm</button>
+                    </div>
+                    <div class="experience_result">
+                        <p class="experience_result-text"></p>
+                        <a href="work.html" class="experience_result-link">For more details click here</a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section class="skills section-padding section" id="skills">
+            <div class="wrapper">
+                <h2 class="skills_title"><span class="underline">Skills</span></h2>
+                <div class="skills_cards">
+
+                    <div class="skills_card skills_card-one">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">JavaScript</h3>
+                            <p class="skills_card-information--desc">Knowledge of JavaScript allows me to provide
+                                interactivity and event handling on websites and make them more enjoyable for the user
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-two">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">HTML</h3>
+                            <p class="skills_card-information--desc">I create websites using HTML5 standards and BEM
+                                methodology. This makes the sites better positioned in browsers.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-three">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">CSS/Sass</h3>
+                            <p class="skills_card-information--desc">Using CSS, I try to create aesthetic projects. I am
+                                also familiar with concepts like responsiveness. I use a preprocessor called Sass to
+                                streamline my work.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-four">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">Bootstrap</h3>
+                            <p class="skills_card-information--desc">I can use Bootstrap, which contains a set of useful
+                                tools to facilitate the creation of a graphical interface for websites and web
+                                applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-five">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">Git</h3>
+                            <p class="skills_card-information--desc">Git is essential when creating my projects.
+                                Concepts such as commit, branch or merge are no strangers to me.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-seven">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">Foreign Languages</h3>
+                            <p class="skills_card-information--desc">I can speak English at an intermediate level and
+                                German at a basic level. Especially thanks to the knowledge of English, I am able to
+                                communicate in this language without any problems and use the documentation of a given
+                                language.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-six">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">Gulp</h3>
+                            <p class="skills_card-information--desc">To streamline my work, I use Gulp, thanks to which
+                                I can preview my changes immediately after saving. In addition, Gulp reduces the weight
+                                of images, for example.</p>
+                        </div>
+                    </div>
+
+                    <div class="skills_card skills_card-eight">
+                        <button class="skills_card-icon"><i class="fa-regular fa-circle-question"></i></button>
+                        <div class="skills_card-information">
+                            <h3 class="skills_card-information--interest">Teamwork</h3>
+                            <p class="skills_card-information--desc">I am a sociable person who likes challenges. I
+                                really like working in a group, listening to other people's ideas and suggesting my own
+                                solutions.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
 
         <section class="contact section-padding section" id="contact">
             <div class="wrapper">
                 <h2 class="contact_title"><span class="underline">Contact me!</span></h2>
-                <!-- <div class="contact_box"> -->
+
                 <form class="contact_form">
 
                     <div class="contact_form-box">
@@ -189,45 +210,26 @@
                     </div>
 
                     <div class="contact_form-popup">
-                        <p class="contact_form-popup--text">Sent successfully</p>
+                        <p class="contact_form-popup--text">The e-mail has been sent successfully!</p>
                         <button class="contact_form-popup--close">Close</button>
                     </div>
-                    <!-- <button class="contact_form-btn"> 
-                                        -->
-                    <!-- <div class="contact_form-box"> -->
-                    <!-- <input class="contact_form-btn" value="Submit" type="submit"> -->
-                    <!-- </div> -->
-                    <!-- <div class="contact_form-btn">
-                        <input value="Submit" type="submit">
-                    </div> -->
-                    <!-- <div class="contact_form-box">
-                        <button class="contact_form-btn" type="submit"><input value="Send" type="submit"></button>
-                    </div> -->
-
-                    <!-- <button class="contact_form-btn" type="submit"><input value="Send" type="submit"></button> -->
-
                 </form>
-                <!-- </div> -->
                 <div class="contact_links">
                     <a href="https://github.com/niewinN" target="_blank" class="contact_links-github"><i
                             class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/piotr-niewi%C5%84ski-702a3b268/"
-                        class="contact_links-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/piotr-niewi%C5%84ski-702a3b268/" class="contact_links-linkedin"
+                        target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
             <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-one">
-            <!-- <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-two">
-            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-three">
-            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-fourth"> -->
+
         </section>
 
     </main>
 
 
-
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
-    <!-- // </script> -->
-
+    <!-- <script src="dist/js/anime.min.js"></script> -->
+    <script src="src/js/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="dist/js/main.min.js"></script>
 </body>

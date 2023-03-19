@@ -9,9 +9,42 @@ const popup = document.querySelector(".contact_form-popup")
 const closePopup = document.querySelector(".contact_form-popup--close")
 const experienceInput = document.querySelector(".experience_box-input")
 const experienceBtn = document.querySelector(".experience_box-btn")
-const experienceText = document.querySelector(".experience_box-text")
+const experienceText = document.querySelector(".experience_result-text")
 const experienceError = document.querySelector(".experience_box-error")
-const experienceLink = document.querySelector(".experience_box-link")
+const experienceLink = document.querySelector(".experience_result-link")
+const experienceResult = document.querySelector(".experience_result")
+const text = document.querySelector(".about_box-text")
+
+text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+
+const animation = anime.timeline({
+	targets: ".about_box-text span",
+	easing: "easeInOutExpo",
+	loop: false,
+})
+
+animation
+	.add({
+		rotate: function () {
+			return anime.random(-360, 360)
+		},
+		translateX: function () {
+			return anime.random(-500, 500)
+		},
+		translateY: function () {
+			return anime.random(-500, 500)
+		},
+		duration: 5000,
+		delay: anime.stagger(20),
+	})
+
+	.add({
+		rotate: 0,
+		translateX: 0,
+		translateY: 0,
+		duration: 5000,
+		delay: anime.stagger(20),
+	})
 
 function sendMail() {
 	const params = {
@@ -71,7 +104,7 @@ const checkLength = (input, min) => {
 	}
 }
 
-const checkEmail = params => {
+const checkEmail = email => {
 	const re =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -113,24 +146,26 @@ const clearExpError = () => {
 }
 
 const checkExp = () => {
-	if(experienceInput === '') {
+	if (experienceInput === "") {
 		showExpError(experienceInput, experienceInput.placeholder)
 	} else {
 		clearExpError()
-		experienceLink.style.visibility = 'hidden';
 	}
 }
 
-const checkExpLength = (min) => {
+const checkExpLength = min => {
 	if (experienceInput.value.length < min) {
 		showExpError(
 			experienceInput,
 			`${experienceInput.previousElementSibling.innerText} must contain at least ${min} characters`
-		) } else {
-			showExperience()
-			confettiAnimation()
-		}
+		)
+		experienceResult.style.visibility = "hidden"
+	} else {
+		showExperience()
+		confettiAnimation()
+		experienceResult.style.visibility = "visible"
 	}
+}
 
 const showExperience = () => {
 	const ExpInputValue = experienceInput.value
@@ -140,14 +175,14 @@ const showExperience = () => {
 	const year = date.getFullYear()
 
 	experienceText.textContent = `Frontend developer in ${ExpInputValue} since ${day}.${month}.${year} :)`
-	experienceLink.style.visibility = 'visible';
+	// experienceLink.style.visibility = 'visible';
 }
 
 const confettiAnimation = () => {
 	confetti({
 		particleCount: 100,
 		spread: 70,
-		origin: {y: 0.6}
+		origin: { y: 0.6 },
 	})
 }
 
@@ -164,6 +199,7 @@ sendBtn.addEventListener("click", e => {
 	checkForm([username, email, msg])
 	checkLength(username, 3)
 	checkLength(msg, 5)
+	checkLength(email, 6)
 	checkEmail(email)
 	checkErrors()
 })
