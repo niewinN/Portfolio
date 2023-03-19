@@ -1,4 +1,5 @@
 const mobileNav = document.querySelector(".nav_list")
+const navItems = document.querySelectorAll(".nav_link")
 const burgerIcon = document.querySelector(".burger")
 const sendBtn = document.querySelector(".contact_form-btn")
 const username = document.querySelector("#username")
@@ -14,6 +15,8 @@ const experienceError = document.querySelector(".experience_box-error")
 const experienceLink = document.querySelector(".experience_result-link")
 const experienceResult = document.querySelector(".experience_result")
 const text = document.querySelector(".about_box-text")
+const footerYear = document.querySelector(".footer_year")
+const arrow = document.querySelector(".header_arrow")
 
 text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
 
@@ -34,7 +37,7 @@ animation
 		translateY: function () {
 			return anime.random(-500, 500)
 		},
-		duration: 5000,
+		duration: 4000,
 		delay: anime.stagger(20),
 	})
 
@@ -42,7 +45,7 @@ animation
 		rotate: 0,
 		translateX: 0,
 		translateY: 0,
-		duration: 5000,
+		duration: 4000,
 		delay: anime.stagger(20),
 	})
 
@@ -70,6 +73,22 @@ function sendMail() {
 burgerIcon.addEventListener("click", function () {
 	mobileNav.classList.toggle("active")
 	burgerIcon.classList.toggle("active")
+	document.body.classList.toggle("fixed-position")
+	mobileNav.classList.toggle('slide')
+	navItems.forEach(el => {
+		el.classList.toggle('slide')
+	})
+
+	navItems.forEach(item => {
+		item.addEventListener("click", () => {
+			mobileNav.classList.remove("active")
+			burgerIcon.classList.remove("active")
+			document.body.classList.remove("fixed-position")
+			navItems.forEach(el => {
+				el.classList.remove('slide')
+			})
+		})
+	})
 })
 
 const showError = (input, msg) => {
@@ -185,6 +204,32 @@ const confettiAnimation = () => {
 		origin: { y: 0.6 },
 	})
 }
+
+const currentYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerHTML = year
+}
+
+const arrowVisibility = () => {
+	if (document.documentElement.scrollTop <= 150) {
+		arrow.style.display = "none"
+	} else {
+		arrow.style.display = 'block'
+	}
+}
+
+arrowVisibility()
+
+arrow.addEventListener('click', () => {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+})
+
+document.addEventListener('scroll', () => {
+	arrowVisibility()
+})
+
+currentYear()
 
 experienceBtn.addEventListener("click", e => {
 	e.preventDefault()

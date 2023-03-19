@@ -15,7 +15,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            // https://dashboard.emailjs.com/admin/account
             emailjs.init('_7X0SZzXp4uKtXE8_');
         })();
     </script>
@@ -28,11 +27,11 @@
         <nav class="nav">
 
             <ul class="nav_list">
-                <li><a href="#" class="nav_link">Home</a></li>
-                <li> <a href="#about" class="nav_link">About</a></li>
-                <li> <a href="#skills" class="nav_link">Skills</a></li>
-                <li><a href="#experience" class="nav_link">Experience</a></li>
-                <li><a href="#contact" class="nav_link">Contact</a></li>
+                <li><a href="#" class="nav_link nav_link-one">Home</a></li>
+                <li> <a href="#about" class="nav_link nav_link-two">About</a></li>
+                <li> <a href="#skills" class="nav_link nav_link-three">Skills</a></li>
+                <li><a href="#experience" class="nav_link nav_link-four">Experience</a></li>
+                <li><a href="#contact" class="nav_link nav_link-five">Contact</a></li>
             </ul>
 
             <button class="burger">
@@ -46,20 +45,21 @@
             <img src="dist/img/boy-38262_640.png" alt="" class="header_avatar">
             <div class="header_box-information">
                 <h1 class="header_title">Nie<span class="header_title-win">win</span></h1>
-                <p class="header_text">I'm a Front-End Developer</p>
+                <p class="header_text">I'm a Frontend Developer</p>
                 <div class="header_download">
                     <a href="dist/img/CV-test.pdf" download class="header_download-link">Download CV</a>
                 </div>
             </div>
         </div>
         <a href="#about" class="header_icon"><i class="fa-solid fa-angles-down"></i></a>
+        <button class="header_arrow"><i class="fa-solid fa-arrow-up"></i></button>
     </header>
     <main class="main">
         <section class="about section-padding section" id="about">
             <div class="wrapper">
                 <div class="about_box">
                     <h2 class="about_box-title section_title"><span class="underline">About me</span></h2>
-                    <p class="about_box-text">Hello! My name is Piotrek.<br> I am a student at the Warsaw University of
+                    <p class="about_box-text">Hello! My name is Piotrek. I am a student at the Warsaw University of
                         Technology. I have been
                         trying to create websites for a long time and it gives me great pleasure. I tried different
                         programming languages in the past and finally realized that creating websites and applications
@@ -68,12 +68,11 @@
                         competence to get my dream job.</p>
                 </div>
             </div>
-            <!-- </div> -->
         </section>
 
         <section class="experience section-padding section" id="experience">
             <div class="wrapper experience_background">
-                <h2 class="experience_title"><span class="underline">My experience</span></h2>
+                <h2 class="experience_title section_title"><span class="underline">My experience</span></h2>
                 <div class="experience_position">
                     <div class="experience_box">
                         <label for="" class="experience_box-label">Your company name</label>
@@ -91,7 +90,7 @@
 
         <section class="skills section-padding section" id="skills">
             <div class="wrapper">
-                <h2 class="skills_title"><span class="underline">Skills</span></h2>
+                <h2 class="skills_title section_title"><span class="underline">My skills</span></h2>
                 <div class="skills_cards">
 
                     <div class="skills_card skills_card-one">
@@ -175,12 +174,13 @@
 
 
                 </div>
+                <p class="skills_react">React soon <i class="fa-regular fa-face-smile"></i></p>
             </div>
         </section>
 
         <section class="contact section-padding section" id="contact">
             <div class="wrapper">
-                <h2 class="contact_title"><span class="underline">Contact me!</span></h2>
+                <h2 class="contact_title section_title"><span class="underline">Contact me!</span></h2>
 
                 <form class="contact_form">
 
@@ -221,15 +221,16 @@
                         target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
-            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon contact_icon-one">
+            <img src="dist/img/envelope-regular.svg" alt="" class="contact_icon">
 
         </section>
 
     </main>
+    <footer class="footer">
+        <p class="footer_text">&copy <span class="footer_year"></span> niewin</p>
+    </footer>
 
-
-    <!-- <script src="dist/js/anime.min.js"></script> -->
-    <script src="src/js/anime.min.js"></script>
+    <script src="dist/js/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="dist/js/main.min.js"></script>
 </body>

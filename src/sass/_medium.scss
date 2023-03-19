@@ -1,0 +1,114 @@
+@media (min-width: 1024px) {
+	.header {
+		background-image: url("../img/mountain-g45efeccec_1920.png");
+
+		&_box {
+			left: 20%;
+			transform: translate(-30%, -30%);
+			width: 100%;
+			flex-direction: row;
+
+			&-information {
+				margin-left: 3em;
+			}
+		}
+
+		&_title {
+			font-size: 5.5rem;
+			text-align: left;
+			transform: translateY(100%);
+			opacity: 0;
+			animation: headerSlip 0.5s linear 0.2s forwards;
+
+			&-win {
+				color: #702a9f;
+			}
+		}
+
+		&_text {
+			font-size: 3.5rem;
+			transform: translateY(100%);
+			opacity: 0;
+			animation: headerSlip 0.5s linear 0.6s forwards;
+			text-align: left;
+		}
+
+		&_avatar {
+			margin-left: 8em;
+			height: 40%;
+			opacity: 0;
+			animation: titleOpacity 0.5s linear 1.4s forwards;
+		}
+
+		&_download {
+			display: flex;
+
+			&-link {
+				font-size: 2.5rem;
+				border: 2px solid #702a9f;
+				transform: translateX(100%);
+				opacity: 0;
+				animation: downloadSlip 0.5s linear 1s forwards;
+			}
+		}
+
+		.nav {
+			height: 8vh;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2em;
+
+			&_link {
+				font-size: 2rem;
+				opacity: 1;
+				margin-bottom: 0;
+			}
+
+			&_list {
+				position: absolute;
+				right: 10%;
+				top: 0;
+				list-style: none;
+				width: 60%;
+				height: 8vh;
+				background-color: transparent;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				transform: translate(0%);
+				transform: translateY(-200%);
+				animation: navTop 0.5s linear 1.6s forwards;
+			}
+		}
+	}
+	.burger {
+		display: none;
+	}
+
+	.about {
+		&_card {
+			width: 30%;
+		}
+	}
+
+	.contact {
+		&_title {
+			font-size: 3rem;
+		}
+	}
+
+	.experience {
+		&_box {
+			width: 50%;
+		}
+
+		&_position {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}

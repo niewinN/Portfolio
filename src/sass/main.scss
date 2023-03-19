@@ -18,7 +18,7 @@ html {
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 100%;
-	// overflow: hidden;
+	overflow: hidden;
 }
 
 .section-padding {
@@ -26,7 +26,24 @@ html {
 }
 
 .underline {
-	border-bottom: 2px solid rgb(222, 147, 159);
+	// border-bottom: 2px solid rgb(222, 147, 159);
+	border-bottom: 2px solid rgb(112, 42, 159);
+}
+
+.fixed-position {
+	position: fixed;
+}
+
+.section_title {
+	color: #fff;
+	font-size: 2.8rem;
+	text-align: center;
+	margin-bottom: 2.5em;
+}
+
+body {
+	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	// overflow: hidden;
 }
 
 :root {
@@ -37,13 +54,39 @@ html {
 
 .header {
 	position: relative;
-	height: 100vh;
+	min-height: 100vh;
 	background-image: url("../img/mountain-g206e1523b_640.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	z-index: 1;
 	overflow: hidden;
+
+	&_arrow {
+		position: absolute;
+		position: fixed;
+		bottom: 3%;
+		width: 50px;
+		height: 50px;
+		right: 3%;
+		z-index: 99999;
+		background: linear-gradient(
+			135deg,
+			rgba(0, 0, 0, 0.75),
+			rgb(112, 42, 159, 0.7)
+		);
+		border: none;
+		outline: none;
+		padding: 0.75em;
+		border-radius: 50%;
+		font-size: 2rem;
+		color: #fff;
+		transition: transform .3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 
 	&_icon {
 		position: absolute;
@@ -59,7 +102,7 @@ html {
 		transition: color 0.3s;
 
 		&:hover {
-			color: rgb(222, 147, 159);
+			color: #702a9f;
 		}
 	}
 
@@ -67,11 +110,9 @@ html {
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100vh;
+		height: 100%;
 		width: 100%;
-		// background-color: rgb(112, 42, 159, 0.3);
 		background-color: rgba(63, 31, 84, 0.3);
-		// background-color: rgba(0, 0, 0, 0.8);
 		z-index: -1;
 	}
 
@@ -86,7 +127,6 @@ html {
 		top: 30%;
 		left: 50%;
 		transform: translate(-50%, -30%);
-		// margin: 0 auto;
 	}
 
 	&_avatar {
@@ -105,9 +145,7 @@ html {
 
 		&-win {
 			position: relative;
-			color: rgb(222, 147, 159);
-			// opacity: 0;
-			// animation: titleOpacity 2s linear 1s infinite alternate;
+			color: #702a9f;
 		}
 	}
 
@@ -115,18 +153,20 @@ html {
 		color: #fff;
 		font-size: 2.2rem;
 		font-weight: 600;
+		text-align: center;
 	}
 
 	&_download {
 		padding-top: 2.5em;
 		width: 100%;
 		text-align: center;
+		margin-bottom: 8em;
 
 		&-link {
 			font-size: 2rem;
 			color: #fff;
 			text-decoration: none;
-			border: 2px solid rgb(222, 147, 159);
+			border: 2px solid #702a9f;
 			padding: 0.5em 1em;
 			border-radius: 20px;
 			font-weight: bold;
@@ -156,7 +196,6 @@ html {
 			width: 80%;
 			height: 100vh;
 			background-color: rgb(39, 30, 89);
-			// filter: blur(10px);
 			display: flex;
 			transform: translateX(100%);
 			z-index: 3;
@@ -178,12 +217,30 @@ html {
 			padding: 1.5em;
 			color: #fff;
 			transition: color 0.3s;
+			opacity: 0;
 
 			&:hover {
 				color: #702a9f;
 			}
 		}
+
+		&_link-one.slide {
+			animation: navSlide 2s linear 0.1s forwards;
+		}
+		&_link-two.slide {
+			animation: navSlide 2s linear 0.2s forwards;
+		}
+		&_link-three.slide {
+			animation: navSlide 2s linear 0.3s forwards;
+		}
+		&_link-four.slide {
+			animation: navSlide 2s linear 0.4s forwards;
+		}
+		&_link-five.slide {
+			animation: navSlide 2s linear 0.5s forwards;
+		}
 	}
+}
 
 	.burger {
 		position: absolute;
@@ -216,40 +273,26 @@ html {
 			transform-origin: 29px -8px;
 		}
 	}
-}
+
 
 .about {
-	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 	min-height: 50vh;
 	overflow: hidden;
 
 	&_box {
-		// background-color: rgba(0, 0, 0, 0.2);
-		// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
 		position: relative;
-		// overflow: hidden;
 		padding: 2em;
 		border-radius: 15px;
 		margin-bottom: 3em;
-		// min-height: 100vh;
-		// width: 100%;
-
-		&-title {
-			color: #fff;
-			font-size: 2.8rem;
-			text-align: center;
-			padding-bottom: 1em;
-		}
 
 		&-text {
 			position: relative;
-			// max-width: 800px;
-			// height: 800px;
 			text-align: center;
 			color: #fff;
 			font-size: 1.8rem;
 			padding-bottom: 0.5em;
 			line-height: 1.6em;
+			letter-spacing: 1px;
 
 			span {
 				position: relative;
@@ -340,13 +383,16 @@ html {
 }
 
 .skills {
-	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	position: relative;
+	overflow: hidden;
 
-	&_title {
-		text-align: center;
-		color: #fff;
-		font-size: 2rem;
-		margin-bottom: 2em;
+	&_react {
+		position: absolute;
+		font-size: 3rem;
+		opacity: 0.3;
+		width: 100vw;
+		font-weight: bold;
+		animation: react 10s linear infinite;
 	}
 
 	&_card {
@@ -360,10 +406,6 @@ html {
 		overflow: hidden;
 		margin: 3em auto;
 		transition: transform 0.3s;
-		// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-		// 	opacity: 0;
-
-		// 	transition: opacity 0.3s;
 
 		&:hover {
 			transform: scale(1.1);
@@ -449,27 +491,7 @@ html {
 
 .contact {
 	position: relative;
-	// min-height: 100vh;
-	// background-color: #40405e;
-	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 	overflow: hidden;
-
-	&_title {
-		color: #fff;
-		margin-bottom: 2em;
-		text-align: center;
-		font-size: 2rem;
-		// z-index: 5;
-	}
-
-	// &_box {
-	// 	position: relative;
-	// 	max-width: 400px;
-	// 	height: 420px;
-	// 	color: #fff;
-	// 	background-color: red;
-
-	// }
 
 	&_form {
 		position: relative;
@@ -478,7 +500,6 @@ html {
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
-		// background: rgba(0, 0, 0, 0.75);
 		background: linear-gradient(
 			135deg,
 			rgba(0, 0, 0, 0.75),
@@ -487,8 +508,6 @@ html {
 		backdrop-filter: blur(10px);
 		border-radius: 10px;
 		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-		z-index: 998;
-		// overflow: hidden;
 
 		&-popup {
 			display: flex;
@@ -619,7 +638,6 @@ html {
 
 			&:hover {
 				background-color: #713997;
-				// background-color: rgb(222, 147, 159);
 			}
 		}
 	}
@@ -653,20 +671,12 @@ html {
 }
 
 .experience {
-	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-
+	overflow: hidden;
 	&_background {
 		background-color: rgba(0, 0, 0, 0.2);
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
 		padding: 2em;
 		border-radius: 15px;
-	}
-
-	&_title {
-		text-align: center;
-		margin-bottom: 2em;
-		font-size: 2.5rem;
-		color: #fff;
 	}
 
 	&_result {
@@ -707,7 +717,7 @@ html {
 		}
 
 		&-label {
-			font-size: 1.8rem;
+			font-size: 1.5rem;
 			margin-bottom: 0.5em;
 			text-align: center;
 			color: #fff;
@@ -716,8 +726,8 @@ html {
 		&-input {
 			border-radius: 12px;
 			border: 2px solid #702a9f;
-			padding: 0.5em 1em;
-			font-size: 1.5rem;
+			padding: 0.5em;
+			font-size: 1.3rem;
 			margin-bottom: 0.5em;
 			outline: none;
 		}
@@ -750,205 +760,14 @@ html {
 	}
 }
 
-// @media(min-width:)
-
-@media (orientation: landscape) {
-	.header {
-		&_box {
-			width: 50%;
-		}
-	}
+.footer {
+	padding: 1em;
+	text-align: center;
+	border-top: 2px solid #702a9f;
+	font-size: 1.5rem;
+	color: #fff;
 }
 
-@media (min-width: 768px) {
-	.header {
-		&_title {
-			font-size: 4.5rem;
-		}
-
-		&_text {
-			font-size: 2.5rem;
-		}
-	}
-
-	.about {
-		&_cards {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		&_card {
-			width: 45%;
-		}
-	}
-
-	.contact {
-		&_icon {
-			display: block;
-			position: absolute;
-			width: 15%;
-			opacity: 0.1;
-			animation: rotateEnvelope 55s linear infinite;
-
-			&-one {
-				top: 3%;
-				left: 5%;
-				transform: rotate(225deg);
-			}
-		}
-	}
-
-	.skills {
-		&_cards {
-			display: flex;
-			// flex-basis: 20%;
-			flex-wrap: wrap;
-		}
-	}
-}
-
-@media (min-width: 1024px) {
-	.header {
-		background-image: url("../img/mountain-g45efeccec_1920.png");
-		&_icon {
-			opacity: 0;
-			animation: titleOpacity 0.5s linear 1.4s forwards;
-
-			&:hover {
-				color: #702a9f;
-			}
-		}
-
-		&_box {
-			left: 20%;
-			transform: translate(-30%, -30%);
-			width: 100%;
-			flex-direction: row;
-
-			&-information {
-				margin-left: 3em;
-			}
-		}
-
-		&_title {
-			font-size: 5.5rem;
-			text-align: left;
-			transform: translateY(100%);
-			opacity: 0;
-			animation: headerSlip 0.5s linear 0.2s forwards;
-
-			&-win {
-				color: #702a9f;
-			}
-		}
-
-		&_text {
-			font-size: 3.5rem;
-			transform: translateY(100%);
-			opacity: 0;
-			animation: headerSlip 0.5s linear 0.6s forwards;
-		}
-
-		&_avatar {
-			margin-left: 8em;
-			height: 40%;
-			opacity: 0;
-			animation: titleOpacity 0.5s linear 1.4s forwards;
-		}
-
-		&_download {
-			display: flex;
-
-			&-link {
-				font-size: 2.5rem;
-				border: 2px solid #702a9f;
-				transform: translateX(100%);
-				opacity: 0;
-				animation: downloadSlip 0.5s linear 1s forwards;
-			}
-		}
-
-		.nav {
-			height: 8vh;
-			position: relative;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 2em;
-			// background-color: #ddd3e4;
-
-			&_link {
-				font-size: 2rem;
-			}
-
-			&_list {
-				position: absolute;
-				right: 10%;
-				top: 0;
-				list-style: none;
-				width: 60%;
-				height: 8vh;
-				background-color: transparent;
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				justify-content: center;
-				transform: translate(0%);
-				// justify-content: space-around;
-			}
-		}
-	}
-	.burger {
-		display: none;
-	}
-
-	.about {
-		&_card {
-			width: 30%;
-		}
-	}
-
-	.contact {
-		&_title {
-			font-size: 3rem;
-		}
-
-		&_icon {
-			// width: 20%;
-		}
-	}
-
-	.experience {
-
-		&_box {
-			width: 50%;
-		}
-
-		&_position {
-			display: flex;
-			flex-direction: column;
-		// 	justify-content: space-around;
-			align-items: center;
-			// justify-content: center;
-		}
-	}
-}
-
-@media (min-width: 1200px) {
-	.header {
-		&_avatar {
-			height: 55%;
-		}
-	}
-
-	.contact {
-		&_form {
-			max-width: 700px;
-			// max-height: 1000px;
-		}
-
-		&_icon {
-			// width: 20%;
-		}
-	}
-}
+@import "./small";
+@import "./medium";
+@import "./large";

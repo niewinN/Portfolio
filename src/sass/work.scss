@@ -8,6 +8,10 @@
 	box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 .box {
     position: relative;
     background-image: url('../../dist/img/9Z_2104.w015.n001.391A.p15.391.jpg');
