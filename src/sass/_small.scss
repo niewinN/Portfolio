@@ -79,6 +79,13 @@
 				font-size: 1.8rem;
 			}
 		}
+
+		&_links {
+			&-github,
+			&-linkedin {
+				z-index: 999;
+			}
+		}
 	}
 
 	.skills {

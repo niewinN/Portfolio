@@ -37,7 +37,7 @@ animation
 		translateY: function () {
 			return anime.random(-500, 500)
 		},
-		duration: 4000,
+		duration: 0,
 		delay: anime.stagger(20),
 	})
 
@@ -45,7 +45,7 @@ animation
 		rotate: 0,
 		translateX: 0,
 		translateY: 0,
-		duration: 4000,
+		duration: 5000,
 		delay: anime.stagger(20),
 	})
 
